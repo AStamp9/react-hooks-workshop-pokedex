@@ -4,7 +4,7 @@ export default function Pages({ goToNext, goToPrev }) {
         {goToPrev ? (
           <button onClick={goToPrev}>PREV</button>
         ) : (
-          <button disabled>Prev</button>
+          <button disabled>PREV</button>
         )}
         {goToNext ? (
           <button onClick={goToNext}>NEXT</button>

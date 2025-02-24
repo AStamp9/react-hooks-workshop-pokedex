@@ -62,7 +62,7 @@ export default function Details() {
       )}
 
       {/* Physical Stats Section */}
-      
+
         <div className="physical-stats">
           <p>ID: {details.id}</p>
           <p>Height: {details.height}</p>
@@ -70,13 +70,6 @@ export default function Details() {
           <p>Type: {details.types.map((t) => t.type.name).join(", ")}</p>
         </div>
     
-
-      {/* Moves Section */}
-      <div className="moves">
-        <h2>Moves</h2>
-        <p>{details.moves.slice(0, 5).map((m) => m.move.name).join(", ")}</p>
-      </div>
-
       {/* Flavor Text Section */}
       <div className="flavor-text">
         <p>
@@ -90,6 +83,13 @@ export default function Details() {
           )}
         </p>
       </div>
+
+      {/* Moves Section */}
+      <div className="moves">
+        <h2>Moves</h2>
+        <p>{details.moves.slice(0, 10).map((m) => m.move.name).join(", ")}</p>
+      </div>
+
 
       {/* Damage Relations Section */}
       <div className="damage-relations">
