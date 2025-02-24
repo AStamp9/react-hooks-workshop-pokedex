@@ -96,9 +96,7 @@ button {
   font-size: 1.2rem;
  
 }
-.physical-stats p {
-  margin: 0.5rem 0;
-}
+
 
 .moves {
   background: rgba(255, 255, 255, 0.1);
@@ -119,11 +117,6 @@ button {
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
-}
-.flavor-text h2 {
-  border-bottom: 1px solid #555;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .damage-relations {
