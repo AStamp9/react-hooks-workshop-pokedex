@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {Routes, Route, Link} from 'react-router-dom'
-import './App.css'
+import './index.css'
 
 import Home from "./components/Home"
 import Details from "./components/Details"
@@ -21,7 +21,7 @@ function App() {
     fetch(curr)
       .then((res) => res.json())
       .then((data) => {
-        
+
         const filteredResults = data.results.filter((pokemon) => {
           const parts = pokemon.url.split('/').filter(Boolean);
           const id = parseInt(parts[parts.length - 1], 10);

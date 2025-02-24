@@ -25,7 +25,7 @@ export default function Pokemon({ pokeData, shiny }) {
       <h2 className="listName">{shiny ? `Shiny ${pokeData.name}` : pokeData.name}</h2>
       <Link to="/details">
         <img
-          className="onlymon"
+          className="pokemon-img"
           alt={pokeData.name}
           src={shiny ? pokeSpriteShiny : pokeSprite}
           onClick={() => setDetails(details)}
