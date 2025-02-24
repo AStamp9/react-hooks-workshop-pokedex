@@ -14,7 +14,6 @@ export default function Pokemon({ pokeData, shiny }) {
       .then((res) => res.json())
       .then((data) => {
         setLocalDetails(data);
-        // Update with appropriate sprite sources; adjust as needed.
         setPokeSprite(data.sprites.other['official-artwork'].front_default);
         setPokeSpriteShiny(data.sprites.other['official-artwork'].front_shiny);
         setType(data.types[0].type.name);

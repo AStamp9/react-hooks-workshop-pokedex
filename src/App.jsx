@@ -21,9 +21,16 @@ function App() {
     fetch(curr)
       .then((res) => res.json())
       .then((data) => {
+        
+        const filteredResults = data.results.filter((pokemon) => {
+          const parts = pokemon.url.split('/').filter(Boolean);
+          const id = parseInt(parts[parts.length - 1], 10);
+          return id <= 151;
+        });
+
         setNextPage(data.next);
         setPrevPage(data.previous);
-        setPokeList(data.results);
+        setPokeList(filteredResults);
       });
   }, [curr]);
 
@@ -35,7 +42,7 @@ function App() {
           <nav className="navBar">
             <Link to="/">
               <button onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=25")}> 
-                <h2> HOME </h2>
+                <h2>HOME </h2>
               </button>
             </Link>
           </nav>
