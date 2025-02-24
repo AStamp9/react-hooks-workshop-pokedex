@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Pokemon from "./Pokemon";
 import Pages from "./Pages";
-import "./Home.css";
+import "../index.css";
 
 export default function Home({ pokeList, goToNext, goToPrev }) {
   const [shinyMode, setShinyMode] = useState(false);

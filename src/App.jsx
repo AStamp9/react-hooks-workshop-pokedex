@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import {Routes, Route, Link} from 'react'
+import { useState, useEffect } from 'react'
+import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
 
 import Home from "./components/Home"
@@ -31,13 +31,13 @@ function App() {
     <>
       <DetailsContext.Provider value={{details, setDetails}}>
         <div className="homepage">
-          
+
           <nav className="navBar">
-            <link to="/">
+            <Link to="/">
               <button onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=25")}> 
                 GO HOME 
               </button>
-            </link>
+            </Link>
           </nav>
 
           <Routes>
@@ -52,7 +52,6 @@ function App() {
               }
             />
             <Route path="/details" element={<Details />} />
-            <Route path="/about" element={<AboutMe />} />
         </Routes>
         </div>
       </DetailsContext.Provider>
