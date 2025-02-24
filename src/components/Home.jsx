@@ -8,7 +8,9 @@ export default function Home({ pokeList, goToNext, goToPrev }) {
 
   return (
     <div className="home-container">
-      <button onClick={() => setShinyMode((prev) => !prev)}>
+      <button 
+        className="shiny-button"
+        onClick={() => setShinyMode((prev) => !prev)}>
         {shinyMode ? "Show Normal" : "Show Shiny"}
       </button>
 

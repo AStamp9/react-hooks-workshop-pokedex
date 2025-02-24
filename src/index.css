@@ -38,3 +38,22 @@ body {
   margin-bottom: 10px;
   font-size: 1em;
 }
+
+.home-container {
+}
+
+.home-button{
+  background-color: rgb(242, 237, 237);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.shiny-button{
+  background-color: rgb(242, 237, 237);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.navBar{;
+}

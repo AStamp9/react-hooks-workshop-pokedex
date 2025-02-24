@@ -41,8 +41,10 @@ function App() {
 
           <nav className="navBar">
             <Link to="/">
-              <button onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=25")}> 
-                <h2>HOME </h2>
+              <button 
+              className="home-button"
+              onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=25")}> 
+                <h2>HOME</h2>
               </button>
             </Link>
           </nav>
