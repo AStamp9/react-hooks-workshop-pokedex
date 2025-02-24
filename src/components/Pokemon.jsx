@@ -15,8 +15,8 @@ export default function Pokemon({ pokeData, shiny }) {
       .then((data) => {
         setLocalDetails(data);
         // Update with appropriate sprite sources; adjust as needed.
-        setPokeSprite(data.sprites.other.home.front_default);
-        setPokeSpriteShiny(data.sprites.other.home.front_shiny);
+        setPokeSprite(data.sprites.other['official-artwork'].front_default);
+        setPokeSpriteShiny(data.sprites.other['official-artwork'].front_shiny);
         setType(data.types[0].type.name);
       });
   }, [pokeData.url]);
