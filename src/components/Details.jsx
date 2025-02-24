@@ -5,10 +5,8 @@ import DetailsContext from "../context/DetailsContext";
 export default function Details() {
   const { details } = useContext(DetailsContext);
   const [speciesInfo, setSpeciesInfo] = useState(null);
-  // We'll store an array of damage relations—one for each type the Pokémon has.
   const [damageRelations, setDamageRelations] = useState([]);
 
-  // Fetch species info for flavor text
   useEffect(() => {
     if (details.species && details.species.url) {
       fetch(details.species.url)
@@ -20,7 +18,6 @@ export default function Details() {
     }
   }, [details]);
 
-  // Fetch damage relations for every type
   useEffect(() => {
     if (details.types && details.types.length > 0) {
       const typeUrls = details.types.map((t) => t.type.url);
@@ -30,7 +27,6 @@ export default function Details() {
         )
       )
         .then((results) => {
-          // Map the results to just the damage_relations objects
           const drArray = results.map((result) => result.damage_relations);
           setDamageRelations(drArray);
         })
@@ -49,7 +45,6 @@ export default function Details() {
     <div className="details-container">
       <h1>{details.name.toUpperCase()}</h1>
 
-      {/* Pokémon Image */}
       {details.sprites &&
         details.sprites.other &&
         details.sprites.other.dream_world &&
@@ -61,16 +56,13 @@ export default function Details() {
           />
       )}
 
-      {/* Physical Stats Section */}
-
         <div className="physical-stats">
           <p>ID: {details.id}</p>
           <p>Height: {details.height}</p>
           <p>Weight: {details.weight}</p>
           <p>Type: {details.types.map((t) => t.type.name).join(", ")}</p>
         </div>
-    
-      {/* Flavor Text Section */}
+
       <div className="flavor-text">
         <p>
           <strong>Flavor Text: </strong>
@@ -84,14 +76,11 @@ export default function Details() {
         </p>
       </div>
 
-      {/* Moves Section */}
       <div className="moves">
         <h2>Moves</h2>
         <p>{details.moves.slice(0, 10).map((m) => m.move.name).join(", ")}</p>
       </div>
 
-
-      {/* Damage Relations Section */}
       <div className="damage-relations">
         {damageRelations.length > 0 ? (
           damageRelations.map((dr, index) => (
