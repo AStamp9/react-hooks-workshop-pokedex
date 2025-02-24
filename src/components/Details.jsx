@@ -7,7 +7,6 @@ export default function Details() {
   const [speciesInfo, setSpeciesInfo] = useState(null);
   const [damageRelations, setDamageRelations] = useState(null);
 
-  // Fetch species info for flavor text
   useEffect(() => {
     if (details.species && details.species.url) {
       fetch(details.species.url)
@@ -19,7 +18,6 @@ export default function Details() {
     }
   }, [details]);
 
-  // Fetch damage relations for the first type
   useEffect(() => {
     if (details.types && details.types.length > 0) {
       const typeUrl = details.types[0].type.url;
@@ -32,7 +30,6 @@ export default function Details() {
     }
   }, [details]);
 
-  // Loading state if details haven't been set yet
   if (!details || Object.keys(details).length === 0) {
     return <div>Loading Pokémon details...</div>;
   }
@@ -41,7 +38,6 @@ export default function Details() {
     <div className="details-container">
       <h1>{details.name.toUpperCase()}</h1>
 
-      {/* Pokémon Image */}
       {details.sprites && details.sprites.other && details.sprites.other.dream_world &&
         details.sprites.other.dream_world.front_default && (
           <img
@@ -51,7 +47,6 @@ export default function Details() {
           />
       )}
 
-      {/* Physical Stats: ID, Height, Weight, and Type */}
       <div className="physical-stats">
         <p>ID: {details.id}</p>
         <p>Height: {details.height}</p>
@@ -59,7 +54,6 @@ export default function Details() {
         <p>Type: {details.types.map((t) => t.type.name).join(", ")}</p>
       </div>
 
-      {/* Moves Section */}
       <div className="moves">
         <h2>Moves</h2>
         <p>
@@ -67,7 +61,6 @@ export default function Details() {
         </p>
       </div>
 
-      {/* Flavor Text Section */}
       <div className="flavor-text">
         <h2>Flavor Text</h2>
         {speciesInfo ? (
@@ -83,7 +76,6 @@ export default function Details() {
         )}
       </div>
 
-      {/* Damage Relations Section */}
       <div className="damage-relations">
         <h2>Damage Relations for {details.types[0].type.name} type</h2>
         {damageRelations ? (

@@ -42,14 +42,21 @@ body {
 .home-container {
 }
 
-.home-button{
-  background-color: rgb(242, 237, 237);
-  border-radius: 8px;
+button {
+  background-color: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .shiny-button{
   background-color: rgb(242, 237, 237);
+  color: black;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -57,3 +64,78 @@ body {
 
 .navBar{;
 }
+
+.details-container {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.pokemon-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-image {
+  width: 200px;
+  height: 200px;
+}
+
+.physical-stats {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+ 
+}
+.physical-stats p {
+  margin: 0.5rem 0;
+}
+
+.moves {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.moves h2 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.flavor-text {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.flavor-text h2 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.damage-relations {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.damage-relations h2 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
