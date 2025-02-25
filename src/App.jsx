@@ -8,14 +8,9 @@ import Details from "./components/Details"
 import DetailsContext from './context/DetailsContext'
 
 function App() {
-  const [curr, setCurr] = useState("https://pokeapi.co/api/v2/pokemon?limit=25");
-  const [nextPage, setNextPage] = useState('');
-  const [prevPage, setPrevPage] = useState('');
+  const [curr, setCurr] = useState("https://pokeapi.co/api/v2/pokemon?limit=151");
   const [pokeList, setPokeList] = useState([]);
   const [details, setDetails] = useState({});  
-
-  const goToNext = () => setCurr(nextPage);
-  const goToPrev = () => setCurr(prevPage);
 
   useEffect(() => {
     fetch(curr)
@@ -28,8 +23,6 @@ function App() {
           return id <= 151;
         });
 
-        setNextPage(data.next);
-        setPrevPage(data.previous);
         setPokeList(filteredResults);
       });
   }, [curr]);
@@ -43,7 +36,7 @@ function App() {
             <Link to="/">
               <button 
               className="home-button"
-              onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=25")}> 
+              onClick={() => setCurr("https://pokeapi.co/api/v2/pokemon?limit=151")}> 
                 <h2>HOME</h2>
               </button>
             </Link>
@@ -55,8 +48,6 @@ function App() {
               element={
                 <Home
                   pokeList={pokeList}
-                  goToNext={nextPage ? goToNext : null}
-                  goToPrev={prevPage ? goToPrev : null}
                 />
               }
             />

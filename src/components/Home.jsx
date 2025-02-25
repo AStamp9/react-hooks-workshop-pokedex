@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Pokemon from "./Pokemon";
-import Pages from "./Pages";
 import "../index.css";
 
-export default function Home({ pokeList, goToNext, goToPrev }) {
+export default function Home({ pokeList}) {
   const [shinyMode, setShinyMode] = useState(false);
 
   return (
@@ -19,8 +18,6 @@ export default function Home({ pokeList, goToNext, goToPrev }) {
           <Pokemon key={pokemon.name} pokeData={pokemon} shiny={shinyMode} />
         ))}
       </div>
-
-      <Pages goToNext={goToNext} goToPrev={goToPrev} />
     </div>
   );
 }
